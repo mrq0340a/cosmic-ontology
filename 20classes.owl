@@ -1,0 +1,541 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/hut-mar-pom/cosmic-ontology"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/hut-mar-pom/cosmic-ontology">
+    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="ro" IRI="http://purl.obolibrary.org/obo/ro/ro-base.owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Moon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Galaxy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPart"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MOON"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SOLAR_SYSTEM_BC"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasBarycenter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Star"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SOLAR_SYSTEM"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EARTH_BC"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPartOf"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Asteroid"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isBarycenterOf"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlanetarySystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpatialRegion"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isOrbitedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isCanonicallyGreaterThan"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Planet"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#orbitsIn"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SUN"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CelestialObject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Satellite"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SatelliteSystem"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="rdf:PlainLiteral"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isCanonicallyLowerThan"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="owl:incompatibleWith"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UnaryStar"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/persephone/ontologies/2020/1/untitled-ontology-2#hasBarycenter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OrbitingSystem"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MOON_BC"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Object"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EARTH_MOON_SYSTEM_BC"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EARTH"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Nebula"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EARTH_MOON_SYSTEM"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Point"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#orbitsAround"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Quazar"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOrbitingComponent"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SUN_SYSTEM"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TernaryStar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BinaryStar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Blazar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StarSystem"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#orbitsWith"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CelestialBody"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#OrbitingSystem"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#hasOrbitingComponent"/>
+            <Class IRI="#Object"/>
+        </ObjectMinCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PlanetarySystem"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#OrbitingSystem"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasOrbitingComponent"/>
+                <ObjectUnionOf>
+                    <Class IRI="#SatelliteSystem"/>
+                    <Class IRI="#StarSystem"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SatelliteSystem"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#OrbitingSystem"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasOrbitingComponent"/>
+                <ObjectUnionOf>
+                    <Class IRI="#Planet"/>
+                    <Class IRI="#Satellite"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#StarSystem"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#OrbitingSystem"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasOrbitingComponent"/>
+                <Class IRI="#Star"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#UnaryStar"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#StarSystem"/>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#hasBarycenter"/>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#isOrbitedBy"/>
+                    <ObjectMinCardinality cardinality="1">
+                        <ObjectProperty IRI="#isBarycenterOf"/>
+                        <Class IRI="#Star"/>
+                    </ObjectMinCardinality>
+                </ObjectAllValuesFrom>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Asteroid"/>
+        <Class IRI="#CelestialBody"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BinaryStar"/>
+        <Class IRI="#StarSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Blazar"/>
+        <Class IRI="#Galaxy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CelestialBody"/>
+        <Class IRI="#CelestialObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CelestialObject"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Galaxy"/>
+        <Class IRI="#CelestialObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Galaxy"/>
+        <Class IRI="#OrbitingSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Moon"/>
+        <Class IRI="#CelestialBody"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Moon"/>
+        <Class IRI="#Satellite"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Nebula"/>
+        <Class IRI="#CelestialBody"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Object"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasBarycenter"/>
+            <Class IRI="#Point"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OrbitingSystem"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Planet"/>
+        <Class IRI="#CelestialBody"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlanetarySystem"/>
+        <Class IRI="#CelestialObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Point"/>
+        <Class IRI="#SpatialRegion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Quazar"/>
+        <Class IRI="#Galaxy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Satellite"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Star"/>
+        <Class IRI="#CelestialBody"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TernaryStar"/>
+        <Class IRI="#StarSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UnaryStar"/>
+        <Class IRI="#StarSystem"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Planet"/>
+        <NamedIndividual IRI="#EARTH"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Point"/>
+        <NamedIndividual IRI="#EARTH_BC"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Moon"/>
+        <NamedIndividual IRI="#MOON"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PlanetarySystem"/>
+        <NamedIndividual IRI="#SOLAR_SYSTEM"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UnaryStar"/>
+        <NamedIndividual IRI="#SUN_SYSTEM"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBarycenter"/>
+        <NamedIndividual IRI="#EARTH"/>
+        <NamedIndividual IRI="#EARTH_BC"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#orbitsAround"/>
+        <NamedIndividual IRI="#EARTH_BC"/>
+        <NamedIndividual IRI="#EARTH_MOON_SYSTEM_BC"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isBarycenterOf"/>
+        <NamedIndividual IRI="#EARTH_MOON_SYSTEM_BC"/>
+        <NamedIndividual IRI="#EARTH_MOON_SYSTEM"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#orbitsAround"/>
+        <NamedIndividual IRI="#EARTH_MOON_SYSTEM_BC"/>
+        <NamedIndividual IRI="#SOLAR_SYSTEM_BC"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isBarycenterOf"/>
+        <NamedIndividual IRI="#MOON_BC"/>
+        <NamedIndividual IRI="#MOON"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#orbitsAround"/>
+        <NamedIndividual IRI="#MOON_BC"/>
+        <NamedIndividual IRI="#EARTH_MOON_SYSTEM_BC"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isBarycenterOf"/>
+        <NamedIndividual IRI="#SOLAR_SYSTEM_BC"/>
+        <NamedIndividual IRI="#SOLAR_SYSTEM"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#orbitsIn"/>
+        <NamedIndividual IRI="#SUN"/>
+        <NamedIndividual IRI="#SUN_SYSTEM"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#orbitsIn"/>
+        <NamedIndividual IRI="#SUN_SYSTEM"/>
+        <NamedIndividual IRI="#SOLAR_SYSTEM"/>
+    </ObjectPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasOrbitingComponent"/>
+        <ObjectProperty IRI="#hasPart"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#orbitsIn"/>
+        <ObjectProperty IRI="#isPartOf"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasBarycenter"/>
+        <ObjectProperty IRI="#isBarycenterOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasOrbitingComponent"/>
+        <ObjectProperty IRI="#orbitsIn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasPart"/>
+        <ObjectProperty IRI="#isPartOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isCanonicallyLowerThan"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/persephone/ontologies/2020/1/untitled-ontology-2#hasBarycenter"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isOrbitedBy"/>
+        <ObjectProperty IRI="#orbitsAround"/>
+    </InverseObjectProperties>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#orbitsWith"/>
+    </SymmetricObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isPartOf"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#orbitsWith"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="http://www.semanticweb.org/persephone/ontologies/2020/1/untitled-ontology-2#hasBarycenter"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPart"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isBarycenterOf"/>
+        <Class IRI="#Point"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#orbitsAround"/>
+        <Class IRI="#Point"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/persephone/ontologies/2020/1/untitled-ontology-2#hasBarycenter"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPart"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isBarycenterOf"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#orbitsAround"/>
+        <Class IRI="#Point"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/persephone/ontologies/2020/1/untitled-ontology-2#hasBarycenter"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyRange>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#hasBarycenter"/>
+            <ObjectProperty IRI="#orbitsAround"/>
+            <ObjectProperty IRI="#isBarycenterOf"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#orbitsIn"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#hasBarycenter"/>
+            <ObjectProperty IRI="#orbitsAround"/>
+            <ObjectProperty IRI="#isOrbitedBy"/>
+            <ObjectProperty IRI="#isBarycenterOf"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#orbitsWith"/>
+    </SubObjectPropertyOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:incompatibleWith"/>
+        <IRI>#BinaryStar</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An orbiting system that is made of two stars</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EARTH_BC</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Barycenter of Earth</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MOON_BC</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Barycenter of the moon</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:incompatibleWith"/>
+        <IRI>#OrbitingSystem</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A system whose barycenter is orbited by other points</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:incompatibleWith"/>
+        <IRI>#PlanetarySystem</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A system that is made of a star system and other &apos;smaller&apos; orbiting objects</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:incompatibleWith"/>
+        <IRI>#SatelliteSystem</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An orbiting system that is made of planets and satellites only</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:incompatibleWith"/>
+        <IRI>#StarSystem</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An orbiting system that is made of stars only</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:incompatibleWith"/>
+        <IRI>#TernaryStar</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An orbiting system that is made of three stars</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:incompatibleWith"/>
+        <IRI>#UnaryStar</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An orbiting system that is made of one star</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasBarycenter</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The barycenter of an object</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasOrbitingComponent</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Property of an orbiting system to have orbiting components 
+i.e. objects whose barycenter orbit around the barycenter of the given system</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPart</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Mereology</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isBarycenterOf</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The object this point is a barycenter of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isPartOf</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Mereology</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#orbitsAround</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Property of a barycenter to orbit around another point</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#orbitsIn</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Property giving the system an orbiting object orbits in</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#orbitsWith</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Property of objects whose barycenter orbit around a common point</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+
